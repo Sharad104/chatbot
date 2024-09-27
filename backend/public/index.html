@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gemini ChatBot</title>
+  <link rel="stylesheet" href="style.css">
+</head>-
+
+<body>
+  <h1>Gemini ChatBot</h1>
+  <button id="toggle-dark-mode" onclick="toggleDarkMode()">Dark Mode</button>
+
+  <input type="text" id="userInput" placeholder="Ask something " />
+  <button id="submitBtn">Submit</button>
+
+  <button id="seehistory" onclick=displayHistory() >history</button>
+  <div id="history"> <!-- we will append items in this tab -->
+    <!-- history items will be here -->
+  </div>
+
+  <button id="clearHistory" onclick="clearHistory()">Clear History</button>
+
+  <div id="output">
+    <!-- AI generated output will be here -->
+  </div>
+
+  <script type="importmap">
+      {
+        "imports": {
+          "@google/generative-ai": "https://esm.run/@google/generative-ai"
+        }
+      }
+  </script>
+
+  <script type="module" src="geminiapi.js"></script>
+  <script src="history.js"></script>
+ 
+
+</body>
+
+</html>
