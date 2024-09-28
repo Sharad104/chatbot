@@ -1,48 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gemini ChatBot</title>
-  <link rel="stylesheet" href="style.css">
-</head>-
-
-
-// shaiv yahi miluga 12 bje tak live share pe
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gemini ChatBot</title>
+    <link rel="stylesheet" href="style.css">
+</head>
 <body>
-  <h1>Gemini ChatBot</h1>
-  <button id="toggle-dark-mode" onclick="toggleDarkMode()">Dark Mode</button>
+    <div class="container">
+        <h1>Gemini ChatBot</h1>
+        <div class="input-group">
+            <input type="text" id="userInput" placeholder="Ask something" />
+            <button id="submitBtn">Submit</button>
+            <button id="toggle-dark-mode" onclick="toggleDarkMode()">Dark Mode</button>
+            <button id="seehistory" onclick="displayHistory()">History</button>
+            <button id="clearHistory" onclick="clearHistory()">Clear History</button>
+        </div>
+        <div id="output" class="output-container"></div>
+    </div>
 
-  <input type="text" id="userInput" placeholder="Ask something " />
-  <button id="submitBtn">Submit</button>
+    <div class="history-container" id="historyContainer" style="display: none;">
+        <h5>Chat History</h5>
+        <ul id="history">
+            <!-- History items will be here -->
+        </ul>
+    </div>
 
-  <button id="seehistory" onclick=displayHistory() >history</button>
-  <div id="history"> <!-- we will append items in this tab -->
-    <!-- history items will be here -->
-  </div>
-
-  <button id="clearHistory" onclick="clearHistory()">Clear History</button>
-
-  <div id="output">
-    <!-- AI generated output will be here -->
-  </div>
-
-
-
-  <script type="importmap">
-      {
-        "imports": {
-          "@google/generative-ai": "https://esm.run/@google/generative-ai"
+    <script type="importmap">
+        {
+            "imports": {
+                "@google/generative-ai": "https://esm.run/@google/generative-ai"
+            }
         }
-      }
-  </script>
+    </script>
 
-  <script type="module" src="geminiapi.js"></script>
-  <script src="history.js"></script>
- 
-
+    <script type="module" src="geminiapi.js"></script>
+    <script src="history.js"></script>
 </body>
-
 </html>

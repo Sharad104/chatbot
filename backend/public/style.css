@@ -1,154 +1,205 @@
+/* Basic CSS Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 /* Styling the body */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f9;
-    margin: 0;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
-  }
-  
-  /* Styling the heading */
-  h1 {
-    color: #333;
-    margin-bottom: 20px;
-    font-size: 2.5rem;
-  }
-  
-  /* Styling the input field */
-  input[type="text"] {
-    width: 300px;
-    padding: 10px;
-    font-size: 1rem;
-    border: 2px solid #ddd;
-    border-radius: 5px;
-    margin-bottom: 10px;
-    outline: none;
-  }
-  
-  /* Styling the submit button */
-  button {
-    padding: 10px 20px;
-    font-size: 1rem;
-    background-color: #007BFF;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
-  
-  button:hover {
-    background-color: #0056b3;
-  }
-  
-  /* Styling the output div */
-  #output {
-    margin-top: 20px;
-    padding: 15px;
-    width: 100%;
-    max-width: 400px;
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    font-size: 1rem;
-    color: #333;
-    white-space: pre-wrap;
-  }
-  
-  #history {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 20%; /* Left side width */
-    height: 100vh; /* Full height of the viewport */
-    background-color: whitesmoke;
-    color: #333;
-    padding: 20px;
-    overflow-y: auto; /* Scroll if history overflows */
-    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5); /* Add shadow for a nice effect */
-  }
-  
-  /* Style for individual history items */
-  #history li {
-    margin-bottom: 10px;
-    padding: 10px;
-    background-color: whitesmoke;
-    border-radius: 5px;
-    list-style: none;
-  }
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f9;
+  padding: 20px;
+}
 
-
-  .dark-mode {
-    background-color: #1e1e1e;
-    color: #f4f4f9;
-  }
-  
-  .dark-mode button {
-    background-color: #333;
-    color: white;
-  }
-  
-  .dark-mode input[type="text"] {
-    background-color: #333;
-    color: white;
-    border: 2px solid #555;
-  }
-  
-  .dark-mode #history {
-    background-color: #222;
-    color: #ddd;
-  }
-  
-  .dark-mode #history li {
-    background-color: #333;
-  }
-  .dark-mode h1 {
-    color: whitesmoke;
-  }
-  .dark-mode #output {
-    background-color: #333;
-    color: whitesmoke;
-  }
-  
-  .dark-mode button:hover {
-    background-color: #444;
-  }
-  
+/* Center container styling */
+.container {
+  max-width: 800px;
+  margin: auto; /* Center horizontally */
+  margin-left: 100px; /* Shift left by 100px */
+}
 
 
 
-  /* Basic Markdown Styling */
-#output h1, #output h2, #output h3 {
+/* Styling the heading */
+h1 {
+  color: #333;
+  margin-bottom: 20px;
+  font-size: 2.5rem;
+  text-align: center; /* Center the heading */
+}
+
+/* Dark Mode styles */
+.dark-mode {
+  background-color: #1e1e1e;
+  color: #f4f4f9;
+}
+
+/* Dark Mode button styles */
+.dark-mode .btn {
+  background-color: #333;
+  color: white;
+}
+
+/* Dark Mode input field styles */
+.dark-mode input[type="text"] {
+  background-color: #333;
+  color: white;
+  border: 2px solid #555;
+}
+
+/* Styling the input field */
+input[type="text"] {
+  flex-grow: 1; /* Allow the input field to grow and take available space */
+  padding: 15px; /* Increased padding for comfort */
+  border: 2px solid #ddd; /* Default border */
+  border-radius: 5px; /* Rounded corners */
+  outline: none; /* Remove outline */
+  min-width: 300px; /* Ensure a minimum width */
+}
+
+/* Input group styling */
+.input-group {
+  display: flex; /* Align buttons and input in a row */
+  justify-content: space-between; /* Space out the input field and buttons */
+  margin-bottom: 20px; /* Space below input group */
+}
+
+/* Styling for button */
+button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-left: 5px; /* Add margin for spacing between buttons */
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+/* Styling for History Container */
+.history-container {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 40%; /* Width of the history section */
+  height: 100vh; /* Full height of the viewport */
+  background-color: whitesmoke;
+  padding: 20px;
+  overflow-y: auto; /* Scroll if history overflows */
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5); /* Shadow effect */
+}
+
+/* History item styles */
+.history-item {
+  background-color: #e9ecef; /* Light gray background */
+  border: 1px solid #ced4da; /* Gray border */
+  border-radius: 5px; /* Rounded corners */
+  padding: 10px; /* Padding around the text */
+  margin-bottom: 10px; /* Space between items */
+  color: #333; /* Dark text color */
+}
+
+/* Styles for the no-history message */
+.no-history {
+  text-align: center;
+  color: #777; /* Lighter color for the no history message */
+}
+
+/* Styling for history heading */
+.history-container h5 {
+  text-align: center;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+/* Styling for the output container */
+.output-container {
+  margin-top: 20px;
+  padding: 15px;
+  width: 100%;
+  min-height: 300px; /* Minimum height for ample space */
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  font-size: 1rem;
+  color: #333;
+  white-space: pre-wrap; /* Preserve whitespace */
+  overflow-y: auto; /* Scroll if the content is too long */
+}
+
+/* Basic Markdown Styling */
+.output-container h1, .output-container h2, .output-container h3 {
   font-family: Arial, sans-serif;
   color: #333;
   margin-bottom: 10px;
 }
 
-#output p {
+.output-container p {
   font-family: Arial, sans-serif;
   line-height: 1.6;
   color: #555;
 }
 
-#output ul {
+.output-container ul {
   list-style-type: disc;
   margin-left: 20px;
 }
 
-#output li {
+.output-container li {
   margin-bottom: 5px;
 }
 
-#output strong {
+.output-container strong {
   font-weight: bold;
 }
 
-#output code {
+.output-container code {
   background-color: #f4f4f4;
   padding: 2px 5px;
   border-radius: 3px;
+}
+
+/* Dark Mode history styles */
+.dark-mode .history-container {
+  background-color: #222; /* Dark background */
+  color: #ddd; /* Light text */
+}
+
+.dark-mode .history-item {
+  background-color: #343a40; /* Dark gray background */
+  border: 1px solid #495057; /* Darker gray border */
+  color: #f8f9fa; /* Light text color */
+}
+
+.dark-mode .no-history {
+  color: #bbb; /* Lighter gray for dark mode */
+}
+
+/* Dark Mode output styles */
+.dark-mode .output-container {
+  background-color: #333;
+  color: whitesmoke;
+}
+
+/* Dark Mode heading styles */
+.dark-mode h1 {
+  color: whitesmoke;
+}
+
+/* Dark Mode button hover styles */
+.dark-mode button:hover {
+  background-color: #444;
+}
+
+/* Dark Mode history heading styles */
+.dark-mode .history-container h5 {
+  text-align: center;
+  margin-bottom: 15px;
+  color: white;
 }
