@@ -48,6 +48,9 @@ This project, **Gemini ChatBot**, is a collaborative effort between two college 
 31. **Loading Indicator:** Shows a loading indicator while generating responses to enhance user experience.
 
 ## Screenshot
+
+#### darkmode
 [![darkmod.png](https://i.postimg.cc/tJRP1CHD/darkmod.png)](https://postimg.cc/PpcN9HJ8)
 
+#### default white mode 
 [![whitemode.png](https://i.postimg.cc/wvQLTRn7/whitemode.png)](https://postimg.cc/mzhtmkLs)
