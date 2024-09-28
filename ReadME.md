@@ -2,6 +2,15 @@
 
 This project, **Gemini ChatBot**, is a collaborative effort between two college friends, Shaiv and Sharad. We aim to create a responsive and interactive chatbot that utilizes the Gemini API to provide users with a variety of functionalities.
 
+
+## Screenshot
+
+#### darkmode
+[![darkmod.png](https://i.postimg.cc/tJRP1CHD/darkmod.png)](https://postimg.cc/PpcN9HJ8)
+
+#### default white mode 
+[![whitemode.png](https://i.postimg.cc/wvQLTRn7/whitemode.png)](https://postimg.cc/mzhtmkLs)
+
 ## Current Features
 
 1. **Text Generation:** Utilizes the Gemini API to generate text responses based on user prompts.
@@ -47,10 +56,3 @@ This project, **Gemini ChatBot**, is a collaborative effort between two college 
 30. **Persistent Storage:** Stores chat history in LocalStorage for persistence across sessions.
 31. **Loading Indicator:** Shows a loading indicator while generating responses to enhance user experience.
 
-## Screenshot
-
-#### darkmode
-[![darkmod.png](https://i.postimg.cc/tJRP1CHD/darkmod.png)](https://postimg.cc/PpcN9HJ8)
-
-#### default white mode 
-[![whitemode.png](https://i.postimg.cc/wvQLTRn7/whitemode.png)](https://postimg.cc/mzhtmkLs)
