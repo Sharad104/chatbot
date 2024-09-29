@@ -1,6 +1,7 @@
 ## Description
 
-This project, **Gemini ChatBot**, is a collaborative effort between two college friends, Shaiv and Sharad. We aim to create a responsive and interactive chatbot that utilizes the Gemini API to provide users with a variety of functionalities.
+This project, **Gemini ChatBot**, is a collaborative effort between two college friends, 
+[@shaivsud0909](https://www.github.com/shaivsud0909) and Sharad. We aim to create a responsive and interactive chatbot that utilizes the Gemini API to provide users with a variety of functionalities.
 
 
 ## Screenshot
