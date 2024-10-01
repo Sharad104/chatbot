@@ -1,7 +1,4 @@
 import { GoogleGenerativeAI } from "@google/generative-ai";
-// import { marked } from 'https://cdn.jsdelivr.net/npm/marked/marked.min.js'; 
-// marked for handling markdown
-
 const API_KEY = "AIzaSyBviF2SXR0CCARjZmm7EXG-PBAJkOlLpGA";
 
 async function generateText(userQuery) {
@@ -12,9 +9,10 @@ async function generateText(userQuery) {
     const prompt = userQuery;
     const result = await model.generateContent(prompt);
     const responseText = await result.response.text();
-    document.getElementById('output').innerText = responseText;
-    saveHistory(userQuery, responseText);
-
+    // Use the `marked` library to convert markdown to HTML
+    const renderedMarkdown = marked.parse(responseText);
+    document.getElementById('output').innerHTML = renderedMarkdown;
+    saveHistory(userQuery, renderedMarkdown);
 
   } catch (err) {
     console.error("error aagya bhenchod console pe", err);
