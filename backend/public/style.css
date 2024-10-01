@@ -160,9 +160,28 @@ button:hover {
 }
 
 .output-container code {
-  background-color: #f4f4f4;
+  background-color: #A3C1DA;
   padding: 2px 5px;
   border-radius: 3px;
+  
+}
+
+.output-container pre {
+background-color: #A3C1DA;
+}
+
+.dark-mode .output-container code {
+  background-color: #0D1117;
+  padding: 2px 5px;
+  border-radius: 3px;
+}
+
+.dark-mode strong {
+  color: white;
+}
+
+.dark-mode .output-container pre {
+  background-color: #0D1117;
 }
 
 /* Dark Mode history styles */
