@@ -15,18 +15,26 @@ body {
 /* Center container styling */
 .container {
   max-width: 800px;
-  margin: auto; /* Center horizontally */
-  margin-left: 100px; /* Shift left by 100px */
+  margin: auto;
+  margin-left: 50px;
+  /* Adjusted to shift it left */
 }
 
-
-
-/* Styling the heading */
+/* Styling the main heading */
 h1 {
   color: #333;
+  /* Dark color for light mode */
   margin-bottom: 20px;
   font-size: 2.5rem;
-  text-align: center; /* Center the heading */
+  text-align: center;
+}
+
+.dark-mode h1 {
+  color: white;
+  /* Dark color for light mode */
+  margin-bottom: 20px;
+  font-size: 2.5rem;
+  text-align: center;
 }
 
 /* Dark Mode styles */
@@ -35,51 +43,60 @@ h1 {
   color: #f4f4f9;
 }
 
-/* Dark Mode button styles */
-.dark-mode .btn {
-  background-color: #333;
-  color: white;
+/* Input field styling */
+input[type="text"] {
+  flex-grow: 1;
+  padding: 15px;
+  border: 2px solid #ddd;
+  border-radius: 5px;
+  outline: none;
+  min-width: 300px;
 }
 
-/* Dark Mode input field styles */
 .dark-mode input[type="text"] {
   background-color: #333;
-  color: white;
+  color: #f4f4f9;
+  /* Changed text color to ensure it's visible */
   border: 2px solid #555;
-}
-
-/* Styling the input field */
-input[type="text"] {
-  flex-grow: 1; /* Allow the input field to grow and take available space */
-  padding: 15px; /* Increased padding for comfort */
-  border: 2px solid #ddd; /* Default border */
-  border-radius: 5px; /* Rounded corners */
-  outline: none; /* Remove outline */
-  min-width: 300px; /* Ensure a minimum width */
 }
 
 /* Input group styling */
 .input-group {
-  display: flex; /* Align buttons and input in a row */
-  justify-content: space-between; /* Space out the input field and buttons */
-  margin-bottom: 20px; /* Space below input group */
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
 }
 
-/* Styling for button */
+/* Button styling */
 button {
   padding: 10px 20px;
   font-size: 1rem;
   background-color: #007BFF;
+  /* Button color in light mode */
   color: white;
+  /* Text color in light mode */
   border: none;
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s;
-  margin-left: 5px; /* Add margin for spacing between buttons */
+  margin-left: 5px;
 }
 
 button:hover {
   background-color: #0056b3;
+  /* Hover effect for light mode */
+}
+
+.dark-mode button {
+  background-color: #007BFF;
+  /* Keep button color same as in light mode */
+  color: white;
+  /* Ensure text color is white in dark mode */
+}
+
+.dark-mode button:hover {
+  background-color: #0056b3;
+  /* Keep hover effect same as in light mode */
 }
 
 /* Styling for History Container */
@@ -87,28 +104,55 @@ button:hover {
   position: fixed;
   top: 0;
   right: 0;
-  width: 40%; /* Width of the history section */
-  height: 100vh; /* Full height of the viewport */
+  width: 40%;
+  height: 100vh;
   background-color: whitesmoke;
+  /* Light background */
   padding: 20px;
-  overflow-y: auto; /* Scroll if history overflows */
-  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5); /* Shadow effect */
+  overflow-y: auto;
+  /* Scroll if history overflows */
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
+}
+
+.dark-mode .history-container {
+  background-color: #222;
+  /* Dark background for history */
+  color: #ddd;
+  /* Light text for dark mode */
 }
 
 /* History item styles */
 .history-item {
-  background-color: #e9ecef; /* Light gray background */
-  border: 1px solid #ced4da; /* Gray border */
-  border-radius: 5px; /* Rounded corners */
-  padding: 10px; /* Padding around the text */
-  margin-bottom: 10px; /* Space between items */
-  color: #333; /* Dark text color */
+  background-color: #e9ecef;
+  /* Light gray background */
+  border: 1px solid #ced4da;
+  /* Gray border */
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 10px;
+  color: #333;
+  /* Dark text color */
+}
+
+.dark-mode .history-item {
+  background-color: #343a40;
+  /* Dark gray background */
+  border: 1px solid #495057;
+  /* Darker gray border */
+  color: #f8f9fa;
+  /* Light text color */
 }
 
 /* Styles for the no-history message */
 .no-history {
   text-align: center;
-  color: #777; /* Lighter color for the no history message */
+  color: #777;
+  /* Gray for no history message */
+}
+
+.dark-mode .no-history {
+  color: #bbb;
+  /* Lighter gray for dark mode */
 }
 
 /* Styling for history heading */
@@ -116,6 +160,12 @@ button:hover {
   text-align: center;
   margin-bottom: 15px;
   color: #333;
+  /* Dark heading color */
+}
+
+.dark-mode .history-container h5 {
+  color: white;
+  /* White heading color in dark mode */
 }
 
 /* Styling for the output container */
@@ -123,27 +173,46 @@ button:hover {
   margin-top: 20px;
   padding: 15px;
   width: 100%;
-  min-height: 300px; /* Minimum height for ample space */
+  min-height: 300px;
+  /* Minimum height for ample space */
   background-color: #fff;
+  /* Light background */
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   font-size: 1rem;
   color: #333;
-  white-space: pre-wrap; /* Preserve whitespace */
-  overflow-y: auto; /* Scroll if the content is too long */
+  /* Dark text color */
+  white-space: pre-wrap;
+  /* Preserve whitespace */
+  overflow-y: auto;
+  /* Scroll if the content is too long */
 }
 
-/* Basic Markdown Styling */
-.output-container h1, .output-container h2, .output-container h3 {
-  font-family: Arial, sans-serif;
-  color: #333;
+/* Dark mode styles for output container */
+.dark-mode .output-container {
+  background-color: #333;
+  /* Dark background for output */
+  color: whitesmoke;
+  /* Light text for dark mode */
+}
+
+/* General styling for common HTML tags within output-container */
+.output-container h1,
+.output-container h2,
+.output-container h3,
+.output-container h4,
+.output-container h5,
+.output-container h6 {
+  color: inherit;
+  /* Inherit color from parent */
   margin-bottom: 10px;
+  /* Consistent margin for all headings */
 }
 
 .output-container p {
-  font-family: Arial, sans-serif;
   line-height: 1.6;
-  color: #555;
+  color: inherit;
+  /* Use inherited color for paragraphs */
 }
 
 .output-container ul {
@@ -153,89 +222,70 @@ button:hover {
 
 .output-container li {
   margin-bottom: 5px;
+  color: inherit;
+  /* Use inherited color for list items */
 }
 
+/* Strong text styling */
 .output-container strong {
   font-weight: bold;
+  color: inherit;
+  /* Use inherited color for strong text */
 }
 
+/* Code styling */
 .output-container code {
   background-color: #A3C1DA;
+  /* Light mode background for code */
   padding: 2px 5px;
   border-radius: 3px;
-  
 }
 
 .output-container pre {
-background-color: #A3C1DA;
+  background-color: #A3C1DA;
+  /* Light mode background for pre */
+  color: #333;
+  /* Dark color for pre */
+  padding: 10px;
+  /* Added padding for better appearance */
+  border-radius: 5px;
+  /* Rounded corners */
 }
 
 .dark-mode .output-container code {
   background-color: #0D1117;
-  padding: 2px 5px;
-  border-radius: 3px;
-}
-
-.dark-mode strong {
-  color: white;
+  /* Dark mode background for code */
+  color: whitesmoke;
+  /* Light text for code in dark mode */
 }
 
 .dark-mode .output-container pre {
   background-color: #0D1117;
-}
-
-/* Dark Mode history styles */
-.dark-mode .history-container {
-  background-color: #222; /* Dark background */
-  color: #ddd; /* Light text */
-}
-
-.dark-mode .history-item {
-  background-color: #343a40; /* Dark gray background */
-  border: 1px solid #495057; /* Darker gray border */
-  color: #f8f9fa; /* Light text color */
-}
-
-.dark-mode .no-history {
-  color: #bbb; /* Lighter gray for dark mode */
-}
-
-/* Dark Mode output styles */
-.dark-mode .output-container {
-  background-color: #333;
+  /* Dark mode background for pre */
   color: whitesmoke;
+  /* Light text for pre in dark mode */
 }
-
-/* Dark Mode heading styles */
-.dark-mode h1 {
-  color: whitesmoke;
-}
-
-/* Dark Mode button hover styles */
-.dark-mode button:hover {
-  background-color: #444;
-}
-
-/* Dark Mode history heading styles */
-.dark-mode .history-container h5 {
-  text-align: center;
-  margin-bottom: 15px;
-  color: white;
-}
-
 
 /* LOADING INDICATOR ANIMATION */
 .loading-indicator {
   font-size: 16px;
   font-weight: bold;
-  color: #007BFF; /* You can change the color */
+  color: #007BFF;
+  /* Loading indicator color */
   margin-top: 10px;
   animation: pulse 1s infinite;
 }
 
 @keyframes pulse {
-  0% { opacity: 1; }
-  50% { opacity: 0.5; }
-  100% { opacity: 1; }
-}
+  0% {
+    opacity: 1;
+  }
 
+  50% {
+    opacity: 0.5;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
