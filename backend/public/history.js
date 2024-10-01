@@ -1,4 +1,8 @@
 let historyVisible = false; // Track the visibility of the history
+// Check for the saved dark mode preference on page load
+if (localStorage.getItem('darkMode') === 'enabled') {
+    document.body.classList.add('dark-mode');
+}
 
 // Function to toggle history visibility
 function displayHistory() {
@@ -57,7 +61,15 @@ function clearHistory() {
     });
 }
 
-// Function to toggle dark mode
+
+
 function toggleDarkMode() {
     document.body.classList.toggle('dark-mode');
+    
+    // Save the current mode in localStorage
+    if (document.body.classList.contains('dark-mode')) {
+        localStorage.setItem('darkMode', 'enabled');
+    } else {
+        localStorage.setItem('darkMode', 'disabled');
+    }
 }
