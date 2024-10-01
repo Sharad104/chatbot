@@ -3,34 +3,33 @@ const API_KEY = "AIzaSyBviF2SXR0CCARjZmm7EXG-PBAJkOlLpGA";
 
 async function generateText(userQuery) {
   try {
-    const genAI = new GoogleGenerativeAI(API_KEY);
-    const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
+      // Show the loading indicator
+      document.getElementById('loadingIndicator').style.display = 'block';
+      document.getElementById('output').innerHTML = ''; // Clear previous output
 
-    const prompt = userQuery;
-    const result = await model.generateContent(prompt);
-    const responseText = await result.response.text();
-    // Use the `marked` library to convert markdown to HTML
-    const renderedMarkdown = marked.parse(responseText);
-    document.getElementById('output').innerHTML = renderedMarkdown;
-    saveHistory(userQuery, renderedMarkdown);
+      const genAI = new GoogleGenerativeAI(API_KEY);
+      const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
 
+      const prompt = userQuery;
+      const result = await model.generateContent(prompt);
+      const responseText = await result.response.text();
+      
+      // Use the `marked` library to convert markdown to HTML
+      const renderedMarkdown = marked.parse(responseText);
+      document.getElementById('output').innerHTML = renderedMarkdown;
+      saveHistory(userQuery, renderedMarkdown);
   } catch (err) {
-    console.error("error aagya bhenchod console pe", err);
-    document.getElementById('output').innerText = "error aagya bhenchod";
+      console.error("error aagya bhenchod console pe", err);
+      document.getElementById('output').innerText = "error aagya bhenchod";
+  } finally {
+      // Hide the loading indicator
+      document.getElementById('loadingIndicator').style.display = 'none';
   }
 }
 
+
 function saveHistory(question, answer) {
   const historyEntry = { question, answer };
-
-  /*  # POST REQUEST {through form dete hain wase toh but yahn nhi dere for simplicity}
-  shaiv jab bhi hum post request dete hain 
-  tab vo post request express server ke pass haiendpoint pe aati hai 
-  
-  app.post(/sendhistory,(req,res)=>{
-    const history = req.body; --> isko hum append kardege 
-  })
-  */
 
   fetch('/saveHistory', {
     method: 'POST',
