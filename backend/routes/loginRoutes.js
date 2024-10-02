@@ -111,6 +111,14 @@ router.post('/login', (req, res) => {
     });
 });
 
+router.get('/get-username', (req, res) => {
+    if (req.session.user.username) {
+        res.json({ username: req.session.user.username });
+    } else {
+        res.json({ username: 'Guest' });
+    }
+});
+
 // Protected home route
 // Route to serve gemini.html
 router.get('/', isAuthenticated, (req, res) => {

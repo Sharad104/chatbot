@@ -64,8 +64,6 @@ function clearHistory() {
         });
 }
 
-// END of history.js
-
 
 function toggleDarkMode() {
     document.body.classList.toggle('dark-mode');
@@ -77,3 +75,16 @@ function toggleDarkMode() {
         localStorage.setItem('darkMode', 'disabled');
     }
 }
+
+
+// this fetch will always execute 
+fetch('/get-username') 
+.then(response => response.json())
+.then(data => {
+  // Update the username span with the session data
+  document.getElementById('username').textContent = data.username;
+})
+.catch(err => console.error('Error fetching username:', err));
+
+
+// END of history.js
