@@ -1,28 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gemini ChatBot</title>
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <link rel="stylesheet" href="style.css">
-    
+
 </head>
+
 <body>
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <div class="container">
-        <h1>Gemini ChatBot</h1>
+        <i> logged in !</i>
+        <h1>Gemini ChatBot
+
+            <form action="/logout" method="POST">
+                <button type="submit">Logout</button>
+            </form>
+        </h1>
+
         <div class="input-group">
             <input type="text" id="userInput" placeholder="Ask something" />
             <button id="submitBtn">Submit</button>
             <button id="toggle-dark-mode" onclick="toggleDarkMode()">Dark Mode</button>
             <button id="seehistory" onclick="displayHistory()">History</button>
             <button id="clearHistory" onclick="clearHistory()">Clear History</button>
+
         </div>
-        <div id="output" class="output-container"></div>
-         <div id="loadingIndicator" class="loading-indicator" style="display: none;">
+        <div id="output" class="output-container">
+
+        </div>
+        <div id="loadingIndicator" class="loading-indicator" style="display: none;">
             Loading...
         </div>
+
     </div>
 
     <div class="history-container" id="historyContainer" style="display: none;">
@@ -40,7 +53,10 @@
         }
     </script>
 
+
+
     <script type="module" src="geminiapi.js"></script>
     <script src="history.js"></script>
 </body>
+
 </html>

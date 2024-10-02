@@ -16,7 +16,7 @@ body {
 .container {
   max-width: 800px;
   margin: auto;
-  margin-left: 50px;
+  margin-left: 100px;
   /* Adjusted to shift it left */
 }
 

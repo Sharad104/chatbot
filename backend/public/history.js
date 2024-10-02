@@ -9,12 +9,12 @@ function displayHistory() {
     const historyContainer = document.getElementById('historyContainer');
 
     // Toggle visibility
-    historyVisible = !historyVisible; 
-    historyContainer.style.display = historyVisible ? 'block' : 'none'; 
+    historyVisible = !historyVisible;
+    historyContainer.style.display = historyVisible ? 'block' : 'none';
 
     if (historyVisible) {
         // If we're showing the history, fetch and display it
-        fetch('history.json')
+        fetch('/history')
             .then(response => response.json())
             .then(data => {
                 const historyList = document.getElementById('history');
@@ -51,21 +51,21 @@ function clearHistory() {
             'Content-Type': 'application/json',
         },
     })
-    .then((res) => res.json())
-    .then((data) => {
-        console.log('History cleared:', data.message);
-        document.getElementById('history').innerHTML = ''; // Clear displayed history
-    })
-    .catch((err) => {
-        console.error('Error clearing history:', err);
-    });
+        .then((res) => res.json())
+        .then((data) => {
+            console.log('History cleared:', data.message);
+            document.getElementById('history').innerHTML = ''; // Clear displayed history
+        })
+        .catch((err) => {
+            console.error('Error clearing history:', err);
+        });
 }
 
 
 
 function toggleDarkMode() {
     document.body.classList.toggle('dark-mode');
-    
+
     // Save the current mode in localStorage
     if (document.body.classList.contains('dark-mode')) {
         localStorage.setItem('darkMode', 'enabled');
