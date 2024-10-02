@@ -1,4 +1,6 @@
-// loginRoutes.js
+// START of loginRoutes.js
+
+
 const express = require('express');
 const fs = require('fs');
 const path = require('path');
@@ -127,3 +129,5 @@ router.post('/logout', (req, res) => {
 });
 
 module.exports = router;
+
+// END of loginRoutes.js

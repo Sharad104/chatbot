@@ -1,4 +1,6 @@
-// server.js
+// START of server.js
+
+
 const express = require('express');
 const path = require('path');
 const historyRoutes = require('./routes/historyRoutes'); // Import the history routes
@@ -24,3 +26,5 @@ const PORT = 3000;
 app.listen(PORT, () => {
     console.log(`Server running on http://localhost:${PORT}`);
 });
+
+// END of server.js

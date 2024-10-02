@@ -1,3 +1,5 @@
+// START of geminiapi.js 
+
 import { GoogleGenerativeAI } from "@google/generative-ai";
 const API_KEY = "AIzaSyBviF2SXR0CCARjZmm7EXG-PBAJkOlLpGA";
 
@@ -55,3 +57,6 @@ document.getElementById('submitBtn').addEventListener('click', function () {
     document.getElementById('output').innerText = "Please enter a query.";
   }
 });
+
+
+// END of geminiapi.js

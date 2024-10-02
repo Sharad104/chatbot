@@ -1,4 +1,6 @@
-// historyRoutes.js
+// START of historyRoutes.js
+
+
 const express = require('express');
 const fs = require('fs');
 const path = require('path');
@@ -52,3 +54,5 @@ router.post('/clearHistory', (req, res) => {
 });
 
 module.exports = router;
+
+// END of historyRoutes.js

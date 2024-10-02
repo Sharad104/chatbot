@@ -1,3 +1,6 @@
+// START of history.js
+
+
 let historyVisible = false; // Track the visibility of the history
 // Check for the saved dark mode preference on page load
 if (localStorage.getItem('darkMode') === 'enabled') {
@@ -61,6 +64,7 @@ function clearHistory() {
         });
 }
 
+// END of history.js
 
 
 function toggleDarkMode() {

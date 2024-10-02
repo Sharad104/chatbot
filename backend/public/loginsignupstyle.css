@@ -1,4 +1,4 @@
-/* styles.css */
+/* START of loginsignupstyle.css */
 
 /* Reset some default browser styles */
 body {
@@ -66,3 +66,6 @@ a:hover {
     text-decoration: underline;
     /* Underline on hover */
 }
+
+
+/* END of loginsignupstyle.css */
